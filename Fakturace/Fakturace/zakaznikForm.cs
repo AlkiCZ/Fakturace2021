@@ -12,9 +12,11 @@ namespace Fakturace
 {
     public partial class zakaznikForm : Form
     {
+        private List<Zakaznik> zakaznici;
+        private SqlConn sqlConn;
         public zakaznikForm()
         {
             InitializeComponent();
+            sqlConn = new SqlConn("Data Source = DESKTOP - C0DU3PI/ALKISQL; Initial Catalog = Fakturace21; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
         }
     }
-}
