@@ -60,7 +60,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlConn.cs" />
+    <Compile Include="Sqlrepo.cs" />
     <Compile Include="statistikaForm.cs">
       <SubType>Form</SubType>
     </Compile>
