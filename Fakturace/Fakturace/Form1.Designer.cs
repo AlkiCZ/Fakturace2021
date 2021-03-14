@@ -31,7 +31,6 @@
             this.btnZakaznici = new System.Windows.Forms.Button();
             this.btnZbozi = new System.Windows.Forms.Button();
             this.btnFaktura = new System.Windows.Forms.Button();
-            this.btnStatistika = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnZakaznici
@@ -64,22 +63,11 @@
             this.btnFaktura.UseVisualStyleBackColor = true;
             this.btnFaktura.Click += new System.EventHandler(this.btnFaktura_Click);
             // 
-            // btnStatistika
-            // 
-            this.btnStatistika.Location = new System.Drawing.Point(675, 38);
-            this.btnStatistika.Name = "btnStatistika";
-            this.btnStatistika.Size = new System.Drawing.Size(215, 122);
-            this.btnStatistika.TabIndex = 3;
-            this.btnStatistika.Text = "Statistika";
-            this.btnStatistika.UseVisualStyleBackColor = true;
-            this.btnStatistika.Click += new System.EventHandler(this.btnStatistika_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 185);
-            this.Controls.Add(this.btnStatistika);
+            this.ClientSize = new System.Drawing.Size(679, 185);
             this.Controls.Add(this.btnFaktura);
             this.Controls.Add(this.btnZbozi);
             this.Controls.Add(this.btnZakaznici);
@@ -94,7 +82,6 @@
         private System.Windows.Forms.Button btnZakaznici;
         private System.Windows.Forms.Button btnZbozi;
         private System.Windows.Forms.Button btnFaktura;
-        private System.Windows.Forms.Button btnStatistika;
     }
 }
 

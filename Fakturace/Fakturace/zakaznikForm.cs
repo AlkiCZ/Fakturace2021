@@ -12,7 +12,7 @@ namespace Fakturace
 {
     public partial class zakaznikForm : Form
     {
-        private List<Zakaznik> zakaznici;
+        private List<Zakaznik> zakaznik;
         private SqlRepo sqlRepo;
         private string[] sloupce = new string[] { "IdZakaznik", "Jmeno", "ICO", "Email", "Telefon" };
         private int sloupecTrideni = 0;
@@ -20,10 +20,10 @@ namespace Fakturace
         public zakaznikForm()
         {
             InitializeComponent();
-            sqlRepo = new SqlRepo("Data Source=(localdb)/MSSQLLocalDB;Initial Catalog=Fakturace1;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            sqlRepo = new SqlRepo(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Fakturace1;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
-        private void FrmZakaznici_Load(object sender, EventArgs e)
+        private void zakaznikForm_Load(object sender, EventArgs e)
         {
             ZobrazData();
         }
@@ -31,9 +31,9 @@ namespace Fakturace
 
         private void ZobrazData()
         {
-            zakaznici = sqlRepo.NactiZakaznik(sloupce[sloupecTrideni], sestupne, hledat.Text);
+            zakaznik = sqlRepo.NactiZakaznik(sloupce[sloupecTrideni], sestupne, hledat.Text);
             listView1.Items.Clear();
-            foreach (var zakaznik in zakaznici)
+            foreach (var zakaznik in zakaznik)
             {
                 listView1.Items.Add(zakaznik.GetListViewItem());
             }

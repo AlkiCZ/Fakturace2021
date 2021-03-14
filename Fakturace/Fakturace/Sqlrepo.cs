@@ -43,5 +43,32 @@ namespace Fakturace
             }
             return zakaznik;
         }
+
+        public List<Zbozi> NactiZbozi(string sloupecTrideni, bool sestupne, string hledani)
+        {
+            List<Zbozi> zbozi = new List<Zbozi>();
+            using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand sqlCommand = new SqlCommand("", sqlConnection))
+                {
+                    sqlCommand.CommandText = $"select * from Zbozi where Nazev like @Hledani order by {sloupecTrideni}{(sestupne ? " desc" : "")}";
+                    sqlCommand.Parameters.AddWithValue("Hledani", "%" + hledani + "%");
+                    sqlConnection.Open();
+                    using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
+                    {
+                        while (dataReader.Read())
+                        {
+                            zbozi.Add(new Zbozi(Convert.ToInt32(dataReader["IdZbozi"]),
+                                dataReader["Nazev"].ToString(),
+                                Convert.ToInt32(dataReader["Cena"]),
+                                Convert.ToBoolean(dataReader["Skladem"])));
+                                                  
+                        }
+                    }
+                    sqlConnection.Close();
+                }
+            }
+            return zbozi;
+        }
     }
 }

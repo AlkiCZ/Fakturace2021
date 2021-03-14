@@ -34,11 +34,5 @@ namespace Fakturace
             fakturaForm fakturaForm = new fakturaForm();
             fakturaForm.ShowDialog();
         }
-
-        private void btnStatistika_Click(object sender, EventArgs e)
-        {
-            statistikaForm statistikaForm = new statistikaForm();
-            statistikaForm.ShowDialog();
-        }
     }
 }
